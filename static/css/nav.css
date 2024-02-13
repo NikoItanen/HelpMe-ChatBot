@@ -1,0 +1,37 @@
+/* Navigation styles */
+nav {
+    display: flex;
+    align-items: center; /* Align navigation items vertically */
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    margin-left: 20px;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-menu li {
+    margin-right: 10px;
+  }
+  
+  .navbar-menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  .navbar-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .navbar-right {
+    margin-left: auto; /* Push the login button to the right */
+    color: white;
+    text-decoration: dotted;
+  }

@@ -1,0 +1,26 @@
+/* Chat box styles */
+#chat-box {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow-y: scroll;
+    max-height: 300px; /* Limit the height to allow scrolling */
+  }
+  
+  /* Chat message styles */
+  .chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e6f2ff;
+  }
+  
+  .chat-message .sender {
+    font-weight: bold;
+  }
+  
+  .chat-message .timestamp {
+    font-size: 0.8em;
+    color: #666;
+  }

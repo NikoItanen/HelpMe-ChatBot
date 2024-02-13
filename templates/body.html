@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>HelpMe Chatbot</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <h1>HelpMe Chatbot</h1>
+                <nav>
+                    <ul class="navbar-menu">
+                        <li><a href="{{ url_for('index') }}" class="navbar-right">Home</a>
+                        <li><a href="{{ url_for('chat') }}" class="navbar-right">Chat</a>
+                    </ul>
+                </nav>
+            </div>
+            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Login</a>
+        </div>
+    </header>
+
+    
+    <main>
+        <!-- This block will be overridden by child templates -->
+        {% block chatbox %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Your footer content goes here -->
+    </footer>
+
+
+    <script>
+        function scrollToBottom() {
+            var chatBox = document.getElementById('chat-box');
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        window.onload = function() {
+            scrollToBottom();
+        };
+    </script>
+</body>
+</html>

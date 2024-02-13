@@ -1,0 +1,18 @@
+{% extends "body.html" %}
+
+{% block head %}
+    <title>HelpMe Chatbot</title>
+{% endblock %}
+
+{% block chatbox %}
+    <div id="chat-box">
+        {% for message in chat_history %}
+            <p><strong>{{ message.sender }}:</strong> {{ message.content }}</p>
+            <p>{{ message.timestamp }}</p>
+        {% endfor %}
+    </div>
+    <form action="/" method="post">
+        <input type="text" name="message">
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}
