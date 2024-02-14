@@ -31,11 +31,11 @@
         </div>
     </header>
 
-    
-    <main>
-        <!-- This block will be overridden by child templates -->
-        {% block chatbox %}{% endblock %}
-    </main>
+    <div class="info-content">
+        {% block main %}
+        {% endblock %}
+    </div>
+
 
     <footer>
         <!-- Your footer content goes here -->

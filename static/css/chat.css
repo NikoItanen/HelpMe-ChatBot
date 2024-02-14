@@ -13,7 +13,7 @@
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #e6f2ff;
+    background-color: #e7e7e7;
   }
   
   .chat-message .sender {
@@ -21,6 +21,43 @@
   }
   
   .chat-message .timestamp {
+    margin-top: -16px;
     font-size: 0.8em;
     color: #666;
   }
+
+  .message-form-container {
+    display: flex;
+}
+
+.message-form {
+    background-color: #f8faff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px; /* Match button font size */
+}
+
+.message-form:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.message-form::placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+/* Send button styles */
+.send-button {
+    background-color: None ; /* Match button color with your theme */
+    color: #000000; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px; /* Add some spacing between the input and button */
+}
+
+.send-button:hover {
+    background-color: #dddddd; /* Darker color on hover */
+}

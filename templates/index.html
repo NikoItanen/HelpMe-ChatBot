@@ -4,15 +4,8 @@
     <title>HelpMe Chatbot</title>
 {% endblock %}
 
-{% block chatbox %}
-    <div id="chat-box">
-        {% for message in chat_history %}
-            <p><strong>{{ message.sender }}:</strong> {{ message.content }}</p>
-            <p>{{ message.timestamp }}</p>
-        {% endfor %}
-    </div>
-    <form action="/" method="post">
-        <input type="text" name="message">
-        <button type="submit">Send</button>
-    </form>
+{% block main %}
+    <!-- Your specific content for the main block goes here -->
+    <h2>Welcome to the Homepage</h2>
+    <p>This is the homepage content.</p>
 {% endblock %}

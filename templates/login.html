@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
 </head>
 <body>
@@ -29,7 +29,6 @@
         </div>
     </header>
 
-    <main>
         <div class="login-container">
             <h2>Login</h2>
             {% if error %}
@@ -43,7 +42,6 @@
                 <button type="submit">Login</button>
             </form>
         </div>
-    </main>
 
     <footer>
         <!-- Your footer content goes here -->
