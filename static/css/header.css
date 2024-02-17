@@ -1,9 +1,10 @@
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-  }
+  background-color: #5f77ffad;
+  color: #69375a;
+  padding: 0px 20px;
+  background: linear-gradient(to top, transparent, #5f77ffad);
+}
   
   .header-content {
     display: flex;
@@ -16,3 +17,8 @@ header {
     align-items: center;
   }
   
+  .fade-effect {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to right, transparent, white);
+}

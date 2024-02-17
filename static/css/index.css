@@ -1,0 +1,31 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ebebeb;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Style the container */
+.info-content {
+  max-width: 600px; 
+  margin: 0 auto; 
+  margin-left: 0px;
+  padding: 20px; 
+  padding-bottom: 600px;
+}
+
+/* Style the title */
+.info-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; 
+  margin-bottom: 10px; 
+}
+
+/* Style the description */
+.info-description {
+  font-size: 16px;
+  color: #666; 
+  line-height: 1.5; 
+}

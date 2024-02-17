@@ -1,7 +1,7 @@
 /* Navigation styles */
 nav {
     display: flex;
-    align-items: center; /* Align navigation items vertically */
+    align-items: center;
   }
   
   .navbar-menu {
@@ -20,7 +20,7 @@ nav {
   }
   
   .navbar-menu li a {
-    color: white;
+    color: #69375a;
     text-decoration: none;
     padding: 5px 10px;
   }
@@ -31,7 +31,12 @@ nav {
   }
   
   .navbar-right {
-    margin-left: auto; /* Push the login button to the right */
-    color: white;
+    margin-left: auto;
+    color: #69375a;
     text-decoration: dotted;
+  }
+
+  .navbar-right:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
   }

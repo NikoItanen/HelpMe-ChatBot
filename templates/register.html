@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="img" href="{{ url_for('static', filename='icons/eye.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 </head>
 <body>
@@ -29,25 +31,34 @@
         </div>
     </header>
 
-        <div class="login-container">
-            <h2>Login</h2>
-            {% if error %}
-            <p class="error">{{ error }}</p>
-            {% endif %}
-            <form action="{{ url_for('Auth.login') }}" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
+    <div class="register-container">
+        <h2>Register</h2>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="{{ url_for('Auth.register') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <div class="password-input">
                 <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-
-        <div class=login-reg>
-            <form action="{{ url_for('Auth.route_register_page') }}" method="post">
+                <button type="button" class="show-password-button" onmousedown="showPassword('password')" onmouseup="hidePassword('password')"></button>
+            </div>
+            <label for="password">Verify password:</label>
+            <div class="password-input">
+                <input type="password" id="password-verify" name="password-verify" required>
+                <button type="button" class="show-password-button" onmousedown="showPassword('password-verify')" onmouseup="hidePassword('password-verify')"></button>
+            </div>
             <button type="submit">Register</button>
-            </form>
-        </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -56,5 +67,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function showPassword(inputId) {
+            var input = document.getElementById(inputId);
+            input.type = "text";
+        }
+        function hidePassword(inputId) {
+            var input = document.getElementById(inputId);
+            input.type = "password"
+        }
+    </script>
 </body>
 </html>

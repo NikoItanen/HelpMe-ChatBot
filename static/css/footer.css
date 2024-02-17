@@ -1,0 +1,15 @@
+.footer-content {
+bottom: 0;
+background-color:  #5f77ffad;
+position: fixed;
+width: 100%;
+top: 90%;
+}
+
+.creator {
+    font-size: 12px;
+    margin-left: auto;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}

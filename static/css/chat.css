@@ -5,7 +5,7 @@
     background-color: #f9f9f9;
     border-radius: 5px;
     overflow-y: scroll;
-    max-height: 300px; /* Limit the height to allow scrolling */
+    max-height: 300px;
   }
   
   /* Chat message styles */
@@ -35,29 +35,29 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    font-size: 16px; /* Match button font size */
+    font-size: 16px;
 }
 
 .message-form:focus {
-    outline: none; /* Remove default focus outline */
+    outline: none;
 }
 
 .message-form::placeholder {
-    color: #999; /* Placeholder text color */
+    color: #999;
 }
 
 /* Send button styles */
 .send-button {
-    background-color: None ; /* Match button color with your theme */
-    color: #000000; /* Text color */
+    background-color: None ;
+    color: #000000;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 10px; /* Add some spacing between the input and button */
+    margin-left: 10px;
 }
 
 .send-button:hover {
-    background-color: #dddddd; /* Darker color on hover */
+    background-color: #dddddd;
 }

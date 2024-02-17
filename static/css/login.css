@@ -26,13 +26,13 @@
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  box-sizing: border-box;
 }
 
 .login-container button[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #5f77ffad;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -41,5 +41,24 @@
 }
 
 .login-container button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #4058dfad;
+}
+
+.login-reg button[type="submit"] {
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  background-color: #5f77ffad;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.login-reg button[type="submit"]:hover {
+  background-color: #4058dfad;
 }

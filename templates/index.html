@@ -1,11 +1,55 @@
-{% extends "body.html" %}
-
-{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
     <title>HelpMe Chatbot</title>
-{% endblock %}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 
-{% block main %}
-    <!-- Your specific content for the main block goes here -->
-    <h2>Welcome to the Homepage</h2>
-    <p>This is the homepage content.</p>
-{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <h1>HelpMe Chatbot</h1>
+                <nav>
+                    <ul class="navbar-menu">
+                        <li><a href="{{ url_for('index') }}" class="navbar-right">Home</a>
+                        <li><a href="{{ url_for('chat') }}" class="navbar-right">Chat</a>
+                    </ul>
+                </nav>
+            </div>
+            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Login</a>
+        </div>
+    </header>
+
+    <div class="info-content">
+        <h2 class="info-title">Welcome to the HelpMe</h2>
+        <p class="info-description">
+            HelpMe is a compassionate and supportive chatbot designed to provide a safe space for 
+            individuals seeking mental health support and guidance. Whether you're experiencing stress, 
+            anxiety, depression, or simply need someone to talk to, Helpme is here to lend a listening 
+            ear and offer personalized assistance.
+        </p>
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="creator">
+                <p>Created by Niko Itänen 2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

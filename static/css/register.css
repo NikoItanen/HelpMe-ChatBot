@@ -1,0 +1,82 @@
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .register-container input[type="text"],
+  .register-container input[type="password"],
+  .register-container input[type="password-verify"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline-offset: none;
+  }
+
+  .register-container input[type="text"]:focus,
+  .register-container input[type="password"]:focus,
+  .register-container input[type="password-verify"]:focus {
+    outline-color:#ccc;
+    outline-width: 1px;
+    outline-style: double;
+    background-color: rgb(252, 252, 252);
+  }
+
+
+  
+  .register-container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #5f77ffad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .register-container button[type="submit"]:hover {
+    background-color: #4058dfad;
+  }
+
+  .password-input {
+    position: relative;
+    width: 100%;
+}
+
+.show-password-button {
+    position: absolute;
+    top: 19px;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 37px;
+    background-image:url(../icons/eye.png);
+    background-size: cover;
+    border-radius: 5px;
+    border: none;
+    background-color: #5f77ffad;
+    transition: background-color 0.3s;
+}
+
+.show-password-button:hover {
+    background-color: #4058dfad;
+}
