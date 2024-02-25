@@ -62,3 +62,16 @@
 .login-reg button[type="submit"]:hover {
   background-color: #4058dfad;
 }
+
+/* Button style */
+.login-button {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

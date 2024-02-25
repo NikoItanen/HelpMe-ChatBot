@@ -1,24 +1,18 @@
-from flask import Flask, render_template, url_for, request, redirect, Blueprint
+from flask import Flask, current_app, render_template, url_for, request, redirect, Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from models import db, Message
-from config import Config
+from models import Message
 
 chat_bp = Blueprint('chat_bp', __name__)
-chat_bp.config = Config
 
 @chat_bp.route("/chat", methods=['GET', 'POST'])
 def chat_route():
+    message_model = Message(current_app.config['MESSAGE_TABLE'])
+    
     if request.method == 'POST':
         message_content = request.form['message']
-        new_message = Message(sender="User", content=message_content)
-        
-        try:
-            db.session.add(new_message)
-            db.session.commit()
-            return redirect('/chat')
-        except:
-            return 'There was an issue adding your message'
+        message_model.put_message(sender="User", content=message_content)
+        return redirect('/chat')
         
     else:
-        chat_history = Message.query.order_by(Message.timestamp).all()
+        chat_history = message_model.get_messages()
         return render_template('chat.html', chat_history=chat_history)
