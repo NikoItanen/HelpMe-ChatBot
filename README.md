@@ -1,5 +1,7 @@
 # HelpMe Chatbot
 
+Note!: Work in progress! This project will be part of my school project.
+
 Welcome to the HelpMe Chatbot GitHub repository!
 
 ## Introduction
