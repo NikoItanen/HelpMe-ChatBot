@@ -34,4 +34,4 @@ To get started with HelpMe Chatbot, follow these steps:
 
 ## Contributors
 
-- Niko Itänen (@yourusername)
+- Niko Itänen (@NikoItanen)
