@@ -109,7 +109,9 @@ class Message:
 
     def get_messages(self):
         response = self.table.scan()
-        return response.get('Items')
+        messages = response.get('Items')
+        messages.sort(key=lambda x: x['timestamp'])
+        return messages
 
 def create_tables(app):
     # Create User table

@@ -21,8 +21,8 @@
                 <h1>HelpMe Chatbot</h1>
                 <nav>
                     <ul class="navbar-menu">
-                        <li><a href="{{ url_for('index') }}" class="navbar-right">Home</a>
-                        <li><a href="{{ url_for('chat') }}" class="navbar-right">Chat</a>
+                        <li><a href="{{ url_for('Routes.index') }}" class="navbar-right">Home</a>
+                        <li><a href="{{ url_for('Routes.chat') }}" class="navbar-right">Chat</a>
                     </ul>
                 </nav>
             </div>
@@ -30,7 +30,7 @@
             <p class="navbar-username">Logged in as {{ session['username'] }}</p>
             <a href="{{ url_for('Auth.logout') }}" class="navbar-right">Sign Out</a>
             {% else %}
-            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Sign In</a>
+            <a href="{{ url_for('Routes.login') }}" class="navbar-right">Sign In</a>
             {% endif %}
         </div>
     </header>
@@ -40,6 +40,9 @@
         {% block chatbox %}
         {% if session['username'] %}
         <div id="chat-box">
+            {% if chat_history|length == 0 %}
+            <p>👋 Hello there! It looks like there are no messages yet. Write your message below:</p>
+            {% endif %}
             {% for message in chat_history %}
             <div class="chat-message">
                 <p class="sender"><strong>{{ message.sender }}:</strong> {{ message.content }}</p>
@@ -47,7 +50,7 @@
             </div>
             {% endfor %}
         </div>
-        <form action="/chat" method="post">
+        <form class="writting-form" action="{{ url_for('ChatBP.chatHandle' )}}" method="post">
             <input class="message-form" type="text" name="message">
             <button type="submit" class="send-button">
                 <svg
@@ -86,6 +89,14 @@
 
 
     <script>
+        var textarea = document.querySelector('.message-form');
+        textarea.addEventListener('input', autoResize, false);
+
+        function autoResize() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        }
+
         function scrollToBottom() {
             var chatBox = document.getElementById('chat-box');
             if (chatBox) {

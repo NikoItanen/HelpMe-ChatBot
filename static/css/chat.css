@@ -5,7 +5,7 @@
     background-color: #f9f9f9;
     border-radius: 5px;
     overflow-y: scroll;
-    max-height: 300px;
+    max-height: 600px;
   }
   
   /* Chat message styles */
@@ -28,36 +28,41 @@
 
   .message-form-container {
     display: flex;
+    justify-content: space-between;
 }
 
 .message-form {
-    background-color: #f8faff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
+  background-color: #f8faff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  flex-grow: 1; /* Take up remaining space */
+  margin-right: 10px; /* Add some space between input and button */
+  min-height: 50px;
+  overflow: hidden; /* Add a scrollbar if the content is too big */
 }
 
 .message-form:focus {
-    outline: none;
+  outline: none;
 }
 
+
 .message-form::placeholder {
-    color: #999;
+  color: #999;
 }
 
 /* Send button styles */
 .send-button {
-    background-color: None ;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .send-button:hover {
-    background-color: #dddddd;
+  background-color: #dddddd;
 }
