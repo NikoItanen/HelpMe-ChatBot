@@ -25,7 +25,12 @@
                     </ul>
                 </nav>
             </div>
-            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Login</a>
+            {% if session['username'] %}
+            <p class="navbar-username">Logged in as {{ session['username'] }}</p>
+            <a href="{{ url_for('Auth.logout') }}" class="navbar-right">Sign Out</a>
+            {% else %}
+            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Sign In</a>
+            {% endif %}
         </div>
     </header>
 

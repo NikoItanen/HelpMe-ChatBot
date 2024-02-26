@@ -26,14 +26,19 @@
                     </ul>
                 </nav>
             </div>
-            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Login</a>
+            {% if session['username'] %}
+            <p class="navbar-username">Logged in as {{ session['username'] }}</p>
+            <a href="{{ url_for('Auth.logout') }}" class="navbar-right">Sign Out</a>
+            {% else %}
+            <a href="{{ url_for('Auth.login') }}" class="navbar-right">Sign In</a>
+            {% endif %}
         </div>
     </header>
 
     
     <main>
         {% block chatbox %}
-        {% if username %}
+        {% if session['username'] %}
         <div id="chat-box">
             {% for message in chat_history %}
             <div class="chat-message">
@@ -66,7 +71,7 @@
             </button>
         </form>
         {% else %}
-        <p>Login in to access the chatbot!</p>
+        <p>Sign in to access the chatbot!</p>
         {% endif %}
         {% endblock %}
     </main>
@@ -83,7 +88,9 @@
     <script>
         function scrollToBottom() {
             var chatBox = document.getElementById('chat-box');
-            chatBox.scrollTop = chatBox.scrollHeight;
+            if (chatBox) {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
         }
         window.onload = function() {
             scrollToBottom();

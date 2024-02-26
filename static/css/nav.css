@@ -31,7 +31,6 @@ nav {
   }
   
   .navbar-right {
-    margin-left: auto;
     color: #69375a;
     text-decoration: dotted;
   }
@@ -39,4 +38,11 @@ nav {
   .navbar-right:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+  }
+
+  .navbar-username {
+    margin-left: auto;
+    color: #69375a;
+    text-decoration: dotted;
+    margin-right: 20px;
   }
